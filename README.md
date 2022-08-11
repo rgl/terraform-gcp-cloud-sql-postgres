@@ -71,3 +71,16 @@ docker run \
     postgres:14 \
     psql
 ```
+
+Destroy everything:
+
+```bash
+# disable the delete protection.
+sed -i -E 's,(deletion_protection).*?=.*,\1 = false,g' main.tf
+terraform plan -out=tfplan
+terraform apply tfplan
+# destroy everything, including all the data.
+terraform destroy
+# enable the delete protection (only in the source code, as the instance is already gone).
+sed -i -E 's,(deletion_protection).*?=.*,\1 = true,g' main.tf
+```

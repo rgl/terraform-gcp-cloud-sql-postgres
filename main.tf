@@ -48,10 +48,10 @@ resource "random_password" "postgres" {
 
 # TODO enable automated backups.
 # TODO enable point-in-time recovery.
-# TODO enable the instance deletion protection.
 resource "google_sql_database_instance" "example" {
   name = "example"
   database_version = "POSTGRES_14"
+  deletion_protection = true
   settings {
     tier = "db-f1-micro"
     ip_configuration  {
