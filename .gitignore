@@ -1,0 +1,8 @@
+.vagrant/
+.terraform/
+terraform.tfstate*
+secrets*
+tfplan
+*.log
+*.pem
+pgpass.conf
