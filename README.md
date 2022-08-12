@@ -10,6 +10,10 @@ This will:
 * Set a random `postgres` account password.
 * Show how to connect to the created PostgreSQL instance using `psql`.
 
+For further managing the PostgreSQL instance, you could use:
+
+* The [community.postgresql Ansible Collection](https://galaxy.ansible.com/community/postgresql) as in [rgl/ansible-init-postgres](https://github.com/rgl/ansible-init-postgres).
+
 ## Usage
 
 Install `terraform`, `gcloud`, and `docker`.
