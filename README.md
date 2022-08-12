@@ -73,6 +73,20 @@ docker run \
     psql
 ```
 
+Execute example queries:
+
+```sql
+select version();
+select current_user;
+select case when ssl then concat('YES (', version, ')') else 'NO' end as ssl from pg_stat_ssl where pid=pg_backend_pid();
+```
+
+Exit the `psql` session:
+
+```sql
+exit
+```
+
 Destroy everything:
 
 ```bash
