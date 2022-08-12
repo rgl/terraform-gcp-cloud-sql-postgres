@@ -6,6 +6,7 @@ This will:
 
 * Create a public PostgreSQL instance.
 * Configure the PostgresSQL instance to require mTLS.
+* Enable automated backups.
 * Set a random `postgres` account password.
 * Show how to connect to the created PostgreSQL instance using `psql`.
 

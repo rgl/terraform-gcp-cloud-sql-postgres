@@ -46,8 +46,6 @@ resource "random_password" "postgres" {
   length = 16
 }
 
-# TODO enable automated backups.
-# TODO enable point-in-time recovery.
 resource "google_sql_database_instance" "example" {
   name = "example"
   database_version = "POSTGRES_14"
@@ -61,6 +59,10 @@ resource "google_sql_database_instance" "example" {
         name = "all"
         value = "0.0.0.0/0"
       }
+    }
+    backup_configuration {
+      enabled = true
+      point_in_time_recovery_enabled = true
     }
   }
 }
